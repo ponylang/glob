@@ -11,9 +11,9 @@ ifdef config
 endif
 
 ifeq ($(config),release)
-	PONYC = ponyc
+	PONYC = stable env ponyc
 else
-	PONYC = ponyc --debug
+	PONYC = stable env ponyc --debug
 endif
 
 SOURCE_FILES := $(shell find $(SRC_DIR) -name \*.pony)
