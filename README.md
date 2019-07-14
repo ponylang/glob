@@ -1,12 +1,14 @@
-# {REPO}
+# glob
 
-{PROJECT_DESCRIPTION}
+The Glob package provides the ability find all pathnames matching a given
+pattern based on Unix shell rules. Its adapted from the
+[glob2 python module](https://github.com/miracle2k/python-glob2).
 
 ## Status
 
-[![CircleCI](https://circleci.com/gh/{USERNAME}/{REPO}.svg?style=svg)](https://circleci.com/gh/{USERNAME}/{REPO})
+[![CircleCI](https://circleci.com/gh/{USERNAME}/{REPO}.svg?style=svg)](https://circleci.com/gh/ponylang/glob)
 
-{PROJECT_STATUS}
+Production ready.
 
 ## Installation
 
@@ -16,10 +18,14 @@
 ```json
 { 
   "type": "github",
-  "repo": "{USERNAME}/{REPO}"
+  "repo": "ponylang/glob"
 }
 ```
 
 * `stable fetch` to fetch your dependencies
-* `use "{PACKAGE}"` to include this package
+* `use "glob"` to include this package
 * `stable env ponyc` to compile your application
+
+## Dependencies
+
+`glob` uses the Pony [`regex` library](https://github.com/ponylang/regex/). Usage and installation instructions for it will be required in order for this library to work.
