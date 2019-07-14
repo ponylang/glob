@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: ponylang/ponyc:release
     steps:
-      - run: bash .ci-scripts/install-dependencies.bash
       - checkout
+      - run: bash .ci-scripts/install-dependencies.bash
       - run: stable fetch
       - run: make test config=release
 
@@ -13,8 +13,8 @@ jobs:
     docker:
       - image: ponylang/ponyc:release
     steps:
-      - run: bash .ci-scripts/install-dependencies.bash
       - checkout
+      - run: bash .ci-scripts/install-dependencies.bash
       - run: stable fetch
       - run: make test config=debug
 
@@ -22,8 +22,8 @@ jobs:
     docker:
       - image: ponylang/ponyc:latest
     steps:
-      - run: bash .ci-scripts/install-dependencies.bash
       - checkout
+      - run: bash .ci-scripts/install-dependencies.bash
       - run: stable fetch
       - run: make test config=release
 
@@ -31,8 +31,8 @@ jobs:
     docker:
       - image: ponylang/ponyc:latest
     steps:
-      - run: bash .ci-scripts/install-dependencies.bash
       - checkout
+      - run: bash .ci-scripts/install-dependencies.bash
       - run: stable fetch
       - run: make test config=debug
 
