@@ -6,7 +6,7 @@ pattern based on Unix shell rules. Its adapted from the
 
 ## Status
 
-[![CircleCI](https://circleci.com/gh/{USERNAME}/{REPO}.svg?style=svg)](https://circleci.com/gh/ponylang/glob)
+[![CircleCI](https://circleci.com/gh/ponylang/glob.svg?style=svg)](https://circleci.com/gh/ponylang/glob)
 
 Production ready.
 
