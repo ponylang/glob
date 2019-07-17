@@ -1,4 +1,7 @@
-{ 
-  "type": "github",
-  "repo": "ponylang/regex"
+{
+  "deps": [
+    { "type": "github",
+      "repo": "ponylang/regex"
+    }
+  ]
 }
