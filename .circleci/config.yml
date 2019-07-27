@@ -8,8 +8,6 @@ jobs:
     docker:
       - image: ponylang/ponyc:release
     steps:
-      - run: apt-get update
-      - run: apt-get install -y curl
       - checkout
       - run: bash .ci-scripts/install-dependencies.bash
       - run: stable fetch
@@ -21,8 +19,6 @@ jobs:
     docker:
       - image: ponylang/ponyc:release
     steps:
-      - run: apt-get update
-      - run: apt-get install -y curl
       - checkout
       - run: bash .ci-scripts/install-dependencies.bash
       - run: stable fetch
