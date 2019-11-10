@@ -10,45 +10,40 @@ jobs:
     steps:
       - checkout
       - run: changelog-tool verify
-      - zulip/status:
-          fail_only: true
 
   release-vs-ponyc-release:
     docker:
-      - image: ponylang/ponyc:release
+      - image: ponylang/shared-docker-ci-x86-64-unknown-linux-builder-with-pcre:release
     steps:
       - checkout
-      - run: bash .ci-scripts/install-dependencies.bash
       - run: make test config=release
       - zulip/status:
           fail_only: true
 
   release-vs-ponyc-master:
     docker:
-      - image: ponylang/ponyc:latest
+      - image: ponylang/shared-docker-ci-x86-64-unknown-linux-builder-with-pcre:latest
     steps:
       - checkout
-      - run: bash .ci-scripts/install-dependencies.bash
       - run: make test config=release
       - zulip/status:
           fail_only: true
 
   debug-vs-ponyc-release:
     docker:
-      - image: ponylang/ponyc:release
+      - image: ponylang/shared-docker-ci-x86-64-unknown-linux-builder-with-pcre:release
     steps:
       - checkout
-      - run: bash .ci-scripts/install-dependencies.bash
+      - run: stable --version
       - run: make test config=debug
       - zulip/status:
           fail_only: true
 
   debug-vs-ponyc-master:
     docker:
-      - image: ponylang/ponyc:latest
+      - image: ponylang/shared-docker-ci-x86-64-unknown-linux-builder-with-pcre:latest
     steps:
       - checkout
-      - run: bash .ci-scripts/install-dependencies.bash
       - run: make test config=debug
       - zulip/status:
           fail_only: true
@@ -67,7 +62,6 @@ jobs:
       - image: ponylang/shared-docker-ci-release-a-library:release
     steps:
       - checkout
-      - run: bash .ci-scripts/install-dependencies.bash
       - run: bash .ci-scripts/documentation.bash "$CIRCLE_TAG" "$GITHUB_TOKEN"
       - zulip/status:
           fail_only: true
@@ -77,8 +71,7 @@ workflows:
 
   on-every-commit:
     jobs:
-      - verify-changelog:
-          context: org-global
+      - verify-changelog
       - release-vs-ponyc-release:
           context: org-global
       - debug-vs-ponyc-release:
