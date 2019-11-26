@@ -6,7 +6,7 @@ pattern based on Unix shell rules. Its adapted from the
 
 ## Status
 
-[![CircleCI](https://circleci.com/gh/ponylang/glob.svg?style=svg)](https://circleci.com/gh/ponylang/glob)
+[![Actions Status](https://github.com/ponylang/glob/workflows/vs-ponyc-latest/badge.svg)](https://github.com/ponylang/glob/actions)
 
 Production ready.
 
