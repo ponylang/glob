@@ -16,9 +16,13 @@ Production ready.
 * Update your `bundle.json`
 
 ```json
-{ 
-  "type": "github",
-  "repo": "ponylang/glob"
+{
+  "deps": [
+    { "type": "github",
+      "repo": "ponylang/glob",
+      "tag": "1.0.0"
+    }
+  ]
 }
 ```
 
