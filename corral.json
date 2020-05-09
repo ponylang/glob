@@ -1,0 +1,9 @@
+{
+  "deps": [
+    {
+      "locator": "github.com/ponylang/regex.git",
+      "version": "1.0.0"
+    }
+  ],
+  "info": {}
+}
