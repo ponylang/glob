@@ -53,7 +53,7 @@ actor Main is TestList
 
 primitive _FileHelper
   fun make_files(h: TestHelper, files: Array[String]): FilePath? =>
-    let top = Directory(FilePath.mkdtemp(h.env.root as AmbientAuth,
+    let top = Directory(FilePath.mkdtemp(h.env.root,
       "tmp._FileHelper.")?)?
     for f in files.values() do
       try
