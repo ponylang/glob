@@ -6,8 +6,6 @@ pattern based on Unix shell rules. Its adapted from the
 
 ## Status
 
-[![Actions Status](https://github.com/ponylang/glob/workflows/vs-ponyc-latest/badge.svg)](https://github.com/ponylang/glob/actions)
-
 Production ready.
 
 ## Installation
