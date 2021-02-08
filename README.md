@@ -19,3 +19,7 @@ Production ready.
 ## Dependencies
 
 `glob` uses the Pony [`regex` library](https://github.com/ponylang/regex/). Usage and installation instructions for it will be required in order for this library to work.
+
+## API Documentation
+
+[https://ponylang.github.io/glob](https://ponylang.github.io/glob)
