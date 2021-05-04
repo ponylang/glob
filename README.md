@@ -11,7 +11,7 @@ Production ready.
 ## Installation
 
 * Install [corral](https://github.com/ponylang/corral)
-* `corral add github.com/ponylang/glob.git --version 1.0.2`
+* `corral add github.com/ponylang/glob.git --version 1.0.3`
 * `corral fetch` to fetch your dependencies
 * `use "glob"` to include this package
 * `corral run -- ponyc` to compile your application
