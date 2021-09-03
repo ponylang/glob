@@ -58,7 +58,7 @@ primitive _FileHelper
     for f in files.values() do
       try
         let dir_head = Path.split(f)
-        let fp = FilePath(top.path, dir_head._1)?
+        let fp = FilePath.from(top.path, dir_head._1)?
         fp.mkdir()
         if dir_head._2 != "" then
           Directory(fp)?.create_file(dir_head._2)?.dispose()
