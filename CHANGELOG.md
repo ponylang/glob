@@ -2,17 +2,11 @@
 
 All notable changes to this library will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a CHANGELOG](http://keepachangelog.com/).
 
-## [unreleased] - unreleased
+## [1.0.4] - 2021-09-03
 
 ### Fixed
 
 - Update to work with ponyc 0.44.0 ([PR #23](https://github.com/ponylang/glob/pull/23))
-
-### Added
-
-
-### Changed
-
 
 ## [1.0.3] - 2021-05-04
 
