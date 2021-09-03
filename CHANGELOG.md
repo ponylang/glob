@@ -6,6 +6,7 @@ All notable changes to this library will be documented in this file. This projec
 
 ### Fixed
 
+- Update to work with ponyc 0.44.0 ([PR #23](https://github.com/ponylang/glob/pull/23))
 
 ### Added
 
