@@ -6,6 +6,7 @@ All notable changes to this library will be documented in this file. This projec
 
 ### Fixed
 
+- Update to work with Pony 0.46.0 ([PR #28](https://github.com/ponylang/glob/pull/28))
 
 ### Added
 
