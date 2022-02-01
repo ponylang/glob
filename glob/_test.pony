@@ -1,7 +1,7 @@
 use "files"
 use "ponytest"
 
-actor Main is TestList
+actor \nodoc\ Main is TestList
   new create(env: Env) => PonyTest(env, this)
   new make() => None
 
@@ -51,7 +51,7 @@ actor Main is TestList
     test(_TestFnMatch("a11c", "a[12]c", false))
     test(_TestFnMatch("a12c", "a[12]c", false))
 
-primitive _FileHelper
+primitive \nodoc\ _FileHelper
   fun make_files(h: TestHelper, files: Array[String]): FilePath? =>
     let top = Directory(FilePath.mkdtemp(h.env.root, "tmp._FileHelper.")?)?
     for f in files.values() do
@@ -70,14 +70,14 @@ primitive _FileHelper
     end
     top.path
 
-class iso _TestFnMatchCase is UnitTest
+class \nodoc\ iso _TestFnMatchCase is UnitTest
   fun name(): String => "files/Glob.fnmatchcase"
 
   fun apply(h: TestHelper) =>
     h.assert_true(Glob.fnmatchcase("aBc", "aBc"))
     h.assert_false(Glob.fnmatchcase("aBc", "abc"))
 
-class iso _TestFnMatch is UnitTest
+class \nodoc\ iso _TestFnMatch is UnitTest
   let _glob: String
   let _path: String
   let _matches: Bool
@@ -94,7 +94,7 @@ class iso _TestFnMatch is UnitTest
   fun apply(h: TestHelper) =>
     _matches == Glob.fnmatch(_glob, _path)
 
-class iso _TestFilter is UnitTest
+class \nodoc\ iso _TestFilter is UnitTest
   fun name(): String => "files/Glob.filter"
 
   fun apply(h: TestHelper) ? =>
@@ -107,7 +107,7 @@ class iso _TestFilter is UnitTest
     h.assert_eq[String](m(1)?._1, "34/b/Befd")
     h.assert_array_eq[String](["34"; "b"; "ef"], m(1)?._2)
 
-class iso _TestGlob is UnitTest
+class \nodoc\ iso _TestGlob is UnitTest
   fun name(): String => "files/FilePath.glob"
 
   fun _rel(top: FilePath, files: Array[FilePath]): Array[String]? =>
@@ -128,7 +128,7 @@ class iso _TestGlob is UnitTest
       h.assert_true(top.remove())
     end
 
-class iso _TestIGlob is UnitTest
+class \nodoc\ iso _TestIGlob is UnitTest
   fun name(): String => "files/FilePath.iglob"
 
   fun _rel(top: FilePath, files: Array[FilePath]): Array[String] ? =>
