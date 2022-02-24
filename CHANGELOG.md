@@ -12,6 +12,7 @@ All notable changes to this library will be documented in this file. This projec
 
 ### Changed
 
+- Update to work with object capabilities changes in Pony 0.49.0 ([PR #30](https://github.com/ponylang/glob/pull/30))
 
 ## [1.0.5] - 2022-01-16
 
