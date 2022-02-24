@@ -53,7 +53,8 @@ actor \nodoc\ Main is TestList
 
 primitive \nodoc\ _FileHelper
   fun make_files(h: TestHelper, files: Array[String]): FilePath? =>
-    let top = Directory(FilePath.mkdtemp(h.env.root, "tmp._FileHelper.")?)?
+    let top = Directory(
+      FilePath.mkdtemp(FileAuth(h.env.root), "tmp._FileHelper.")?)?
     for f in files.values() do
       try
         let dir_head = Path.split(f)
