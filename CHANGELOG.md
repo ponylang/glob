@@ -6,6 +6,7 @@ All notable changes to this library will be documented in this file. This projec
 
 ### Fixed
 
+- Update to work with PonyTest change introduced in 0.49.0 ([PR #31](https://github.com/ponylang/glob/pull/31))
 
 ### Added
 
