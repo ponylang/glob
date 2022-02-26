@@ -2,14 +2,11 @@
 
 All notable changes to this library will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a CHANGELOG](http://keepachangelog.com/).
 
-## [unreleased] - unreleased
+## [1.0.6] - 2022-02-26
 
 ### Fixed
 
 - Update to work with PonyTest change introduced in 0.49.0 ([PR #31](https://github.com/ponylang/glob/pull/31))
-
-### Added
-
 
 ### Changed
 
