@@ -12,6 +12,7 @@ All notable changes to this library will be documented in this file. This projec
 
 ### Changed
 
+- Update ponylang/regex Dependency ([PR #49](https://github.com/ponylang/glob/pull/48))
 
 ## [1.0.6] - 2022-02-26
 
