@@ -60,7 +60,7 @@ primitive Glob
     : Array[(String, Array[String])] val
   =>
     """
-    Returns `name` and the matching subgroups for `names` that match \exhaustive\ `pattern`.
+    Returns `name` and the matching subgroups for `names` that match `pattern`.
 
     All strings are first case-normalized if the operating system requires it.
     """
