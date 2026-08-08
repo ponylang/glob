@@ -52,9 +52,10 @@ actor \nodoc\ Main is TestList
     test(_TestFnMatch("a12c", "a[12]c", false))
 
 primitive \nodoc\ _FileHelper
-  fun make_files(h: TestHelper, files: Array[String]): FilePath? =>
-    let top = Directory(
-      FilePath.mkdtemp(FileAuth(h.env.root), "tmp._FileHelper.")?)?
+  fun make_files(h: TestHelper, files: Array[String]): FilePath ? =>
+    let top =
+      Directory(
+        FilePath.mkdtemp(FileAuth(h.env.root), "tmp._FileHelper.")?)?
     for f in files.values() do
       try
         let dir_head = Path.split(f)
@@ -111,7 +112,7 @@ class \nodoc\ iso _TestFilter is UnitTest
 class \nodoc\ iso _TestGlob is UnitTest
   fun name(): String => "files/FilePath.glob"
 
-  fun _rel(top: FilePath, files: Array[FilePath]): Array[String]? =>
+  fun _rel(top: FilePath, files: Array[FilePath]): Array[String] ? =>
     let res = recover ref Array[String] end
     for fp in files.values() do
       res.push(Path.rel(top.path, fp.path)?)
@@ -140,14 +141,22 @@ class \nodoc\ iso _TestIGlob is UnitTest
     res
 
   fun apply(h: TestHelper) ? =>
-    let top = _FileHelper.make_files(h, ["a/1"; "a/2"; "b"; "c/1"; "c/4"])?
+    let top =
+      _FileHelper.make_files(
+        h, ["a/1"; "a/2"; "b"; "c/1"; "c/4"])?
     try
-      Glob.iglob(top, "*/1",
+      Glob.iglob(
+        top,
+        "*/1",
         {(f: FilePath, matches: Array[String]) =>
           try
             match matches(0)?
-            | "a" => h.assert_eq[String](Path.rel(top.path, f.path)?, "a/1")
-            | "c" => h.assert_eq[String](Path.rel(top.path, f.path)?, "c/1")
+            | "a" =>
+              h.assert_eq[String](
+                Path.rel(top.path, f.path)?, "a/1")
+            | "c" =>
+              h.assert_eq[String](
+                Path.rel(top.path, f.path)?, "c/1")
             else error
             end
           else
