@@ -10,14 +10,6 @@ See `primitive Glob` for additional usage details.
 use "files"
 use "regex"
 
-interface GlobHandler
-  """
-  A handler for `Glob.iglob`. Each path which matches the glob will be called
-  with the groups that matched the various wildcards supplies in the
-  `match_groups` array.
-  """
-  fun ref apply(path: FilePath, match_groups: Array[String])
-
 primitive Glob
   """
   Filename matching and globbing with shell patterns.
@@ -49,7 +41,9 @@ primitive Glob
     fnmatchcase(Path.normcase(name), Path.normcase(pattern))
 
   fun fnmatchcase(name: String, pattern: String): Bool =>
-    """Tests whether `name` matches `pattern`, including case."""
+    """
+    Tests whether `name` matches `pattern`, including case.
+    """
     try
       Regex(translate(pattern))? == name
     else
@@ -122,7 +116,8 @@ primitive Glob
               res.append("\\^")
               i = i + 1
             end
-            let sub = recover ref pat.substring(i.isize(), j.isize()) end
+            let sub =
+              recover ref pat.substring(i.isize(), j.isize()) end
             res.append(sub .> replace("\\","\\\\"))
             res.append("])")
             i = j + 1
@@ -148,7 +143,7 @@ primitive Glob
     on `Glob` for details.
     """
     let res = Array[FilePath]
-    iglob(root_path, pattern, {(path, _) => res.push(path)})
+    iglob(root_path, pattern, {(path, _) => res.push(path) })
     res
 
   fun _apply_glob_to_walk(
@@ -162,12 +157,13 @@ primitive Glob
     for e in entries.values() do
       try
         let p = dir.join(e)?
-        let m = compiled_pattern(
-          if Path.is_abs(pattern) then
-            p.path
-          else
-            Path.rel(root.path, p.path)?
-          end)?
+        let m =
+          compiled_pattern(
+            if Path.is_abs(pattern) then
+              p.path
+            else
+              Path.rel(root.path, p.path)?
+            end)?
         glob_handler(p, m.groups())
       end
     end
@@ -184,5 +180,8 @@ primitive Glob
     // not contain wildcards and expanding them before walking.
     try
       root.walk(this~_apply_glob_to_walk(
-        pattern, Regex(translate(Path.normcase(pattern)))?, root, glob_handler))
+        pattern,
+        Regex(translate(Path.normcase(pattern)))?,
+        root,
+        glob_handler))
     end
