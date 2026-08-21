@@ -1,0 +1,8 @@
+{
+  "locks": [
+    {
+      "locator": "github.com/ponylang/regex.git",
+      "revision": "1.1.6"
+    }
+  ]
+}
