@@ -94,7 +94,7 @@ class \nodoc\ iso _TestFnMatch is UnitTest
       "Glob.fnmatch(" + _glob + ", " + _path + ")"
 
   fun apply(h: TestHelper) =>
-    _matches == Glob.fnmatch(_glob, _path)
+    h.assert_eq[Bool](_matches, Glob.fnmatch(_glob, _path))
 
 class \nodoc\ iso _TestFilter is UnitTest
   fun name(): String => "files/Glob.filter"
